@@ -30,20 +30,17 @@ public class TournamentController {
     @Autowired
     private MemberRepository memberRepository;
 
-    // POST /tournaments - Create a new tournament
     @PostMapping
     public ResponseEntity<Tournament> addTournament(@RequestBody Tournament tournament) {
         Tournament savedTournament = tournamentRepository.save(tournament);
         return ResponseEntity.ok(savedTournament);
     }
 
-    // GET /tournaments - Get all tournaments
     @GetMapping
     public List<Tournament> getAllTournaments() {
         return tournamentRepository.findAll();
     }
 
-    // GET /tournaments/{id} - Get a tournament by ID (with participating members)
     @GetMapping("/{id}")
     public ResponseEntity<Tournament> getTournament(@PathVariable Long id) {
         Optional<Tournament> tournament = tournamentRepository.findById(id);
@@ -51,7 +48,6 @@ public class TournamentController {
                          .orElseGet(() -> ResponseEntity.notFound().build());
     }
 
-    // POST /tournaments/{tournamentId}/addMember - Add a member to a tournament
     @PostMapping("/{tournamentId}/addMember")
     public ResponseEntity<String> addMemberToTournament(
             @PathVariable Long tournamentId,
@@ -69,7 +65,6 @@ public class TournamentController {
         return ResponseEntity.notFound().build();
     }
 
-    // GET /tournaments/search - Search tournaments by start date or location.
     @GetMapping("/search")
     public List<Tournament> searchTournaments(
             @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate startDate,
