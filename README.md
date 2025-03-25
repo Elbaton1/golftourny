@@ -31,16 +31,16 @@ A Spring Boot REST API that is for golf club's members and tournaments. you can 
 ### Member Endpoints
 - `POST /members` - Add a member
 - `GET /members` - Get all members
-- `GET /members/search?name=John` - Search name
-- `GET /members/search?type=Gold` - Search membership type
-- `GET /members/search?phone=1234567890` - Search phone number
-- `GET /members/search?tournamentStartDate=2024-05-01` - Members in tournaments starting that date
+- `GET /members/search?name=` - Search name
+- `GET /members/search?type=` - Search membership type
+- `GET /members/search?phone=` - Search phone number
+- `GET /members/search?tournamentStartDate=` - Members in tournaments starting that date
 
 ### Tournament Endpoints
 - `POST /tournaments` - Add a tournament
 - `GET /tournaments` - Get all tournaments
-- `GET /tournaments/search?startDate=2024-06-01` - Search date
-- `GET /tournaments/search?location=Halifax` - Search location
+- `GET /tournaments/search?startDate=` - Search date
+- `GET /tournaments/search?location=` - Search location
 - `POST /tournaments/{id}/addMember` - Add member to a tournament
 
 ---
@@ -67,7 +67,7 @@ Postman test results are included in the `/screenshots/` folder
 
 ## 📅 Deliverables Summary
 - [x] GitHub link: [https://github.com/Elbaton1/golftourny](https://github.com/Elbaton1/golftourny)
-- [x] API Testing Screenshots: in `screenshots/`
+- [x] API Testing Screenshots: in `screenshots`
 - [x] Docker Support with MySQL
 - [x] README with instructions and search API details
 
