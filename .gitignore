@@ -1,0 +1,51 @@
+#------------------------------------------
+# Maven / Java / Spring Boot / IntelliJ
+#------------------------------------------
+
+# Maven target folder
+target/
+
+# Logs and temp files
+*.log
+*.tmp
+hs_err_pid*
+!src/main/resources/*.log   # if you do want logs in resources
+
+# IntelliJ project files
+.idea/
+*.iml
+*.iws
+out/
+
+# Eclipse
+.project
+.settings/
+.classpath
+
+# VS Code
+.vscode/
+
+# OS-Specific
+.DS_Store
+Thumbs.db
+
+# Others
+*.swp
+*.swo
+*.bak
+~$*
+*~
+
+# Node modules if you had a frontend folder
+# node_modules/
+
+#------------------------------------------
+# Docker / Container
+#------------------------------------------
+
+# Docker or Compose override files (commonly not checked in)
+docker-compose.override.yml
+
+# If you build Docker images locally
+**/build/
+**/docker-out/
